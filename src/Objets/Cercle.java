@@ -5,18 +5,18 @@ public class Cercle extends ObjetGraphique{
 	private int rayon;
 	private static int compteur = 0;
 	
-	public Cercle(int abscisse, int ordonnee, int rayon){
-		this.centre = new Point(abscisse, ordonnee);
-		this.rayon = rayon;
-		this.nom = "cercle" + Cercle.compteur;
+	public Cercle(int abscisse, int ordonnee, int rayon, Crayon crayon){
+		super("cercle" + Cercle.compteur, crayon);
 		Cercle.compteur += 1;
+		this.centre = new Point(abscisse, ordonnee, crayon);
+		this.rayon = rayon;
 	}
 	
-	public Cercle(Point centre, int rayon){
+	public Cercle(Point centre, int rayon, Crayon crayon){
+		super("cercle" + Cercle.compteur, crayon);
+		Cercle.compteur += 1;
 		this.centre = centre;
 		this.rayon = rayon;
-		this.nom = "cercle" + Cercle.compteur;
-		Cercle.compteur += 1;
 	}
 	
 	public Point getCentre() {
@@ -33,7 +33,7 @@ public class Cercle extends ObjetGraphique{
 	}
 	
 	public Cercle clone(){
-		return new Cercle(this.getCentre().getAbscisse(), this.getCentre().getOrdonnee(), this.getRayon());
+		return new Cercle(this.getCentre().getAbscisse(), this.getCentre().getOrdonnee(), this.getRayon(), this.getCrayon());
 	}
 	
 	public void translation(int abscisse, int ordonnee){
@@ -41,6 +41,6 @@ public class Cercle extends ObjetGraphique{
 	}
 	
 	public String display(){
-		return "cercle " + this.getNom() + " de centre " + this.centre.nom + " (" + this.getCentre().getAbscisse() + "," + this.getCentre().getOrdonnee() + ") et de rayon " + this.rayon;
+		return "cercle " + this.getNom() + " de centre " + this.getCentre().getNom() + " (" + this.getCentre().getAbscisse() + "," + this.getCentre().getOrdonnee() + ") et de rayon " + this.getRayon();
 	}
 }

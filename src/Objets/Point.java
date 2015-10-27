@@ -5,11 +5,11 @@ public class Point extends ObjetGraphique{
 	private int ordonnee;
 	private static int compteur = 0;
 	
-	public Point(int abscisse, int ordonnee){
+	public Point(int abscisse, int ordonnee, Crayon crayon){
+		super("point" + Point.compteur, crayon);
+		Point.compteur += 1;
 		this.abscisse = abscisse;
 		this.ordonnee = ordonnee;
-		this.nom = "point" + Point.compteur;
-		Point.compteur += 1;
 	}
 	
 	public int getAbscisse() {

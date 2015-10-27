@@ -5,25 +5,25 @@ public class Segment extends ObjetGraphique{
 	private Point extremiteB;
 	private static int compteur = 0;
 	
-	public Segment(int abscisseA, int ordonneeA, int abscisseB, int ordonneeB){
-		this.extremiteA = new Point(abscisseA, ordonneeA);
-		this.extremiteB = new Point(abscisseB, ordonneeB);
-		this.nom = "segment" + Segment.compteur;
+	public Segment(int abscisseA, int ordonneeA, int abscisseB, int ordonneeB, Crayon crayon){
+		super("segment" + Segment.compteur, crayon);
 		Segment.compteur += 1;
+		this.extremiteA = new Point(abscisseA, ordonneeA, crayon);
+		this.extremiteB = new Point(abscisseB, ordonneeB, crayon);
 	}
 	
-	public Segment(Point point, int abscisse, int ordonnee){
-		this.extremiteA = new Point(abscisse, ordonnee);
+	public Segment(Point point, int abscisse, int ordonnee, Crayon crayon){
+		super("segment" + Segment.compteur, crayon);
+		Segment.compteur += 1;
+		this.extremiteA = new Point(abscisse, ordonnee, crayon);
 		this.extremiteB = point;
-		this.nom = "segment" + Segment.compteur;
-		Segment.compteur += 1;
 	}
 	
-	public Segment(Point pointA, Point pointB){
+	public Segment(Point pointA, Point pointB, Crayon crayon){
+		super("segment" + Segment.compteur, crayon);
+		Segment.compteur += 1;
 		this.extremiteA = pointA;
 		this.extremiteB = pointB;
-		this.nom = "segment" + Segment.compteur;
-		Segment.compteur += 1;
 	}
 	
 	public Point getExtremiteA() {
@@ -40,7 +40,7 @@ public class Segment extends ObjetGraphique{
 	}
 	
 	public Segment clone(){
-		return new Segment(this.getExtremiteA().getAbscisse(), this.getExtremiteA().getOrdonnee(), this.getExtremiteB().getAbscisse(), this.getExtremiteB().getOrdonnee());
+		return new Segment(this.getExtremiteA().getAbscisse(), this.getExtremiteA().getOrdonnee(), this.getExtremiteB().getAbscisse(), this.getExtremiteB().getOrdonnee(), this.getCrayon());
 	}
 	
 	public void translation(int abscisse, int ordonnee){
