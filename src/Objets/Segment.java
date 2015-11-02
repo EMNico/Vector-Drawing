@@ -1,6 +1,6 @@
 package Objets;
 
-public class Segment extends ObjetGraphique{
+public class Segment extends ObjetGraphiqueSimple{
 	private Point extremiteA;
 	private Point extremiteB;
 	private static int compteur = 0;

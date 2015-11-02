@@ -2,9 +2,13 @@ package Objets;
 
 import java.util.ArrayList;
 
-public class Dessin{
+public class Dessin extends ObjetGraphique{
 	private ArrayList<ObjetGraphique> listeElmts;
-	
+	private int abscisseMin;
+	private int abscisseMax;
+	private int ordonneeMin;
+	private int ordonneeMax;
+
 	public Dessin(){
 		this.listeElmts = new ArrayList<ObjetGraphique>();
 	}
@@ -12,12 +16,39 @@ public class Dessin{
 	public ArrayList<ObjetGraphique> getListeElmts() {
 		return listeElmts;
 	}
+	public int getAbscisseMin() {
+		return abscisseMin;
+	}
+	public int getAbscisseMax() {
+		return abscisseMax;
+	}
+	public int getOrdonneeMin() {
+		return ordonneeMin;
+	}
+	public int getOrdonneeMax() {
+		return ordonneeMax;
+	}
 
 	public void addElmt(ObjetGraphique elmt){
 		this.listeElmts.add(elmt);
 	}
+	public void rogner(int aMin, int aMax, int oMin, int oMax){
+		this.abscisseMin = aMin;
+		this.abscisseMax = aMax;
+		this.ordonneeMin = oMin;
+		this.ordonneeMax = oMax;
+	}
 	
-	private String display(){
+	public void translation(int abscisse, int ordonnee){
+		// TODO
+	}
+	
+	public Dessin clone(){
+		// TODO
+		return null;
+	}
+	
+	public String display(){
 		String s = "";
 		int i;
 		for (i = 0; i < this.getListeElmts().size(); i++){
@@ -34,6 +65,6 @@ public class Dessin{
 		// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		// Dessiner ici grâce aux methodes
 		// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		dessin.display();
+		dessin.interpreteurString();
 	}
 }

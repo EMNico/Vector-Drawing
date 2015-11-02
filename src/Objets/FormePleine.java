@@ -2,7 +2,7 @@ package Objets;
 
 import java.awt.Color;
 
-abstract class FormePleine extends ObjetGraphique{
+abstract class FormePleine extends ObjetGraphiqueSimple{
 	private Color couleurInt;
 
 	public FormePleine(String nom, Crayon crayon) {

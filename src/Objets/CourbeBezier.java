@@ -3,7 +3,7 @@ package Objets;
 import java.util.ArrayList;
 
 // Courbe servant à approximer un tracé manuel
-public class CourbeBezier extends ObjetGraphique{
+public class CourbeBezier extends ObjetGraphiqueSimple{
 	private ArrayList<Point> listePoints;
 	private static int compteur = 0;
 

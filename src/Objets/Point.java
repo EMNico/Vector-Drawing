@@ -1,6 +1,6 @@
 package Objets;
 
-public class Point extends ObjetGraphique{
+public class Point extends ObjetGraphiqueSimple{
 	private int abscisse;
 	private int ordonnee;
 	private static int compteur = 0;
