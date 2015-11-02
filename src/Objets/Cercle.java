@@ -1,12 +1,12 @@
 package Objets;
 
-public class Cercle extends ObjetGraphique{
+public class Cercle extends FormePleine{
 	private Point centre;
 	private int rayon;
 	private static int compteur = 0;
 	
 	public Cercle(int abscisse, int ordonnee, int rayon, Crayon crayon){
-		super("cercle" + Cercle.compteur, crayon);
+		super("Cercle" + Cercle.compteur, crayon);
 		Cercle.compteur += 1;
 		this.centre = new Point(abscisse, ordonnee, crayon);
 		this.rayon = rayon;

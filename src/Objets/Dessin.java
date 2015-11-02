@@ -21,13 +21,19 @@ public class Dessin{
 		String s = "";
 		int i;
 		for (i = 0; i < this.getListeElmts().size(); i++){
-			if (!(this.getListeElmts().get(i) instanceof Point)){
-				s += this.getListeElmts().get(i).display() + " \n";
-			}
+			s += this.getListeElmts().get(i).display() + " \n";
 		}
 		return s;
 	}
 	public void interpreteurString(){
 		System.out.println(this.display());
+	}
+	
+	public static void main(String[] args) {
+		Dessin dessin = new Dessin();
+		// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		// Dessiner ici grâce aux methodes
+		// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		dessin.display();
 	}
 }

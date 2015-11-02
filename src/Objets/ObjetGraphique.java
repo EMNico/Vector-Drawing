@@ -1,7 +1,6 @@
 package Objets;
 
 abstract class ObjetGraphique {
-	
 	private String nom;
 	private Crayon crayon;
 	

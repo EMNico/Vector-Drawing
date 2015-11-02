@@ -6,7 +6,7 @@ public class Point extends ObjetGraphique{
 	private static int compteur = 0;
 	
 	public Point(int abscisse, int ordonnee, Crayon crayon){
-		super("point" + Point.compteur, crayon);
+		super("Point" + Point.compteur, crayon);
 		Point.compteur += 1;
 		this.abscisse = abscisse;
 		this.ordonnee = ordonnee;

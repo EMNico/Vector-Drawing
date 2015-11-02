@@ -20,7 +20,7 @@ public class Segment extends ObjetGraphique{
 	}
 	
 	public Segment(Point pointA, Point pointB, Crayon crayon){
-		super("segment" + Segment.compteur, crayon);
+		super("Segment" + Segment.compteur, crayon);
 		Segment.compteur += 1;
 		this.extremiteA = pointA;
 		this.extremiteB = pointB;
