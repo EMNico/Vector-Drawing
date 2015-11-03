@@ -1,20 +1,11 @@
 package Objets;
 
 abstract class ObjetGraphiqueSimple extends ObjetGraphique{
-	private String nom;
 	private Crayon crayon;
 	
-	public ObjetGraphiqueSimple(String nom, Crayon crayon){
-		this.nom = nom;
+	public ObjetGraphiqueSimple(String nom, Crayon crayon) {
+		super(nom);
 		this.crayon = crayon;
-	}
-
-	public String getNom() {
-		return nom;
-	}
-
-	public void setNom(String nom) {
-		this.nom = nom;
 	}
 
 	public Crayon getCrayon() {
