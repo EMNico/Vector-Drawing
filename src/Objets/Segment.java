@@ -56,7 +56,7 @@ public class Segment extends ObjetGraphiqueSimple{
 		// TODO
 	}
 	
-	public String display(){
+	public String codeTexte(){
 		return "segment " + this.getNom() + " allant du point " + this.getExtremiteA().getNom() + " (" + this.getExtremiteA().getAbscisse() + "," + this.getExtremiteA().getOrdonnee() + ") au point " + this.getExtremiteA().getNom() + " (" + this.getExtremiteB().getAbscisse() + "," + this.getExtremiteB().getOrdonnee() + ")";
 	}
 }

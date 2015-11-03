@@ -36,7 +36,7 @@ public class Polygone extends FormePleine{
 		// TODO
 	}
 	
-	public String display(){
+	public String codeTexte(){
 		String s = "polygone " + this.getNom() + " de sommets ";
 		int i;
 		for (i = 0; i < this.getListeSommets().size(); i++){

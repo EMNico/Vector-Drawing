@@ -15,5 +15,4 @@ abstract class ObjetGraphiqueSimple extends ObjetGraphique{
 	public void setCrayon(Crayon crayon) {
 		this.crayon = crayon;
 	}
-	
 }

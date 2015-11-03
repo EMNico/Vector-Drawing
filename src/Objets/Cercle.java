@@ -40,7 +40,7 @@ public class Cercle extends FormePleine{
 		this.getCentre().translation(abscisse, ordonnee);
 	}
 	
-	public String display(){
+	public String codeTexte(){
 		return "cercle " + this.getNom() + " de centre " + this.getCentre().getNom() + " (" + this.getCentre().getAbscisse() + "," + this.getCentre().getOrdonnee() + ") et de rayon " + this.getRayon();
 	}
 }

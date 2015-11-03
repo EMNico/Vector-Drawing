@@ -26,7 +26,7 @@ public class CourbeBezier extends ObjetGraphiqueSimple{
 		// TODO
 	}
 	
-	public String display(){
+	public String codeTexte(){
 		String s = "tracé manuel approximé par la courbe de Bézier " + this.getNom() + " passant par les points ";
 		int i;
 		for (i = 0; i < this.getlistePoints().size(); i++){

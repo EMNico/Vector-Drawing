@@ -14,8 +14,21 @@ abstract class ObjetGraphique {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-
-	public String display(){
+	
+	public String codeHTML(){
 		return "";
+	}
+	
+	public String codeTexte(){
+		return "";
+	}
+	
+	public void displayGraphique(){
+		Dessin.writeHTMLFile(this.codeHTML());
+		Dessin.openHTMLFile();
+	}
+	
+	public void displayTexte(){
+		System.out.println(this.codeTexte());
 	}
 }
