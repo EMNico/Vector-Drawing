@@ -25,6 +25,10 @@ public class Point extends ObjetGraphiqueSimple{
 		this.ordonnee = ordonnee;
 	}
 	
+	public Point clone(){
+		return new Point(this.getAbscisse(), this.getOrdonnee(), this.getCrayon());
+	}
+	
 	public void translation(int abscisse, int ordonnee){
 		this.setAbscisse(this.getAbscisse() + abscisse);
 		this.setOrdonnee(this.getOrdonnee() + ordonnee);

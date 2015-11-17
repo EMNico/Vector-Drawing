@@ -1,20 +1,18 @@
 package Objets;
 
-import java.awt.Color;
-
 public class Crayon {
-	private Color couleur;
+	private String couleur;
 	private int epaisseur;
 	
-	public Crayon(Color couleur, int epaisseur){
+	public Crayon(String couleur, int epaisseur){
 		this.couleur = couleur;
 		this.epaisseur = epaisseur;
 	}
 	
-	public Color getCouleur() {
+	public String getCouleur() {
 		return couleur;
 	}
-	public void setCouleur(Color couleur) {
+	public void setCouleur(String couleur) {
 		this.couleur = couleur;
 	}
 	public int getEpaisseur() {

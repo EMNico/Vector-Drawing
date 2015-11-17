@@ -36,12 +36,12 @@ public class Dessin extends DessinAbstrait{
 			this.setDessinSuivant(dessin);
 		}
 	}
-
-	public String display(){
-		return contenu.display() + dessinSuivant.display();
-	}
 	
-	public static void main(String[] args) {
-		// TODO : afficher le display d'un dessin
+	public String codeHTML(){
+		return this.getDessinSuivant().codeHTML() + this.getContenu().codeHTML();
+	}
+
+	public String codeTexte(){
+		return contenu.codeTexte() + ", " + dessinSuivant.codeTexte();
 	}
 }

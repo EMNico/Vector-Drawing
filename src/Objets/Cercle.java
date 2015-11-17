@@ -33,14 +33,24 @@ public class Cercle extends FormePleine{
 	}
 	
 	public Cercle clone(){
-		return new Cercle(this.getCentre().getAbscisse(), this.getCentre().getOrdonnee(), this.getRayon(), this.getCrayon());
+		return new Cercle(this.getCentre().clone(), this.getRayon(), this.getCrayon());
 	}
 	
 	public void translation(int abscisse, int ordonnee){
 		this.getCentre().translation(abscisse, ordonnee);
 	}
 	
-	public String display(){
+	public String codeHTML(){
+		String s =  "<circle cx='" + this.getCentre().getAbscisse() + "'cy='" + this.getCentre().getOrdonnee() + "' r='" + this.getRayon() + "' stroke='" + this.getCrayon().getCouleur() + "' stroke-width='" + this.getCrayon().getEpaisseur() + "'";
+		String fill = "none";
+		if (this.getCouleurInt() != null){
+			fill = this.getCouleurInt();
+		}
+		s += " fill='" + fill + "'/>";
+		return s;
+	}
+	
+	public String codeTexte(){
 		return "cercle " + this.getNom() + " de centre " + this.getCentre().getNom() + " (" + this.getCentre().getAbscisse() + "," + this.getCentre().getOrdonnee() + ") et de rayon " + this.getRayon();
 	}
 }

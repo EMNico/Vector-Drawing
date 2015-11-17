@@ -40,7 +40,7 @@ public class Segment extends ObjetGraphiqueSimple{
 	}
 	
 	public Segment clone(){
-		return new Segment(this.getExtremiteA().getAbscisse(), this.getExtremiteA().getOrdonnee(), this.getExtremiteB().getAbscisse(), this.getExtremiteB().getOrdonnee(), this.getCrayon());
+		return new Segment(this.getExtremiteA().clone(), this.getExtremiteB().clone(), this.getCrayon());
 	}
 	
 	public void translation(int abscisse, int ordonnee){
@@ -55,8 +55,13 @@ public class Segment extends ObjetGraphiqueSimple{
 	public void rotation(Point centre, int angle){
 		// TODO
 	}
+
+	public String codeHTML(){
+		String s = "<line x1='" + this.getExtremiteA().getAbscisse() + "' y1='" + this.getExtremiteA().getOrdonnee() + "' x2='" + this.getExtremiteB().getAbscisse() + "' y2='" + this.getExtremiteB().getOrdonnee() + "' style='stroke:" + this.getCrayon().getCouleur() + ";stroke-width:" + this.getCrayon().getEpaisseur() + "' />";
+		return s;
+	}
 	
-	public String display(){
+	public String codeTexte(){
 		return "segment " + this.getNom() + " allant du point " + this.getExtremiteA().getNom() + " (" + this.getExtremiteA().getAbscisse() + "," + this.getExtremiteA().getOrdonnee() + ") au point " + this.getExtremiteA().getNom() + " (" + this.getExtremiteB().getAbscisse() + "," + this.getExtremiteB().getOrdonnee() + ")";
 	}
 }

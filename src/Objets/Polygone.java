@@ -28,15 +28,36 @@ public class Polygone extends FormePleine{
 	}
 	
 	public Polygone clone(){
-		// TODO
-		return null;
+		ArrayList<Point> listeSommets = null;
+		int i;
+		for (i = 0 ; i < this.getListeSommets().size() ; i++){
+			listeSommets.add(i, this.getListeSommets().get(i).clone());
+		}
+		return new Polygone(this.getCrayon(), listeSommets);
 	}
 	
 	public void translation(int abscisse, int ordonnee){
-		// TODO
+		int i;
+		for (i = 0 ; i < this.getListeSommets().size() ; i++){
+			this.getListeSommets().get(i).translation(abscisse, ordonnee);
+		}
 	}
 	
-	public String display(){
+	public String codeHTML(){
+		String s =  "<polygon points='";
+		int i;
+		for (i = 0; i < this.getListeSommets().size(); i++){
+			s += this.getListeSommets().get(i).getAbscisse() + "," + this.getListeSommets().get(i).getOrdonnee() + " ";
+		}
+		String fill = "none";
+		if (this.getCouleurInt() != null){
+			fill = this.getCouleurInt();
+		}
+		s += "' style='fill:" + fill + ";stroke:" + this.getCrayon().getCouleur() + ";stroke-width:" + this.getCrayon().getEpaisseur() + "' />";
+		return s;
+	}
+	
+	public String codeTexte(){
 		String s = "polygone " + this.getNom() + " de sommets ";
 		int i;
 		for (i = 0; i < this.getListeSommets().size(); i++){
