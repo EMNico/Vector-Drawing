@@ -36,6 +36,20 @@ public class Polygone extends FormePleine{
 		// TODO
 	}
 	
+	public String codeHTML(){
+		String s =  "<polygon points='";
+		int i;
+		for (i = 0; i < this.getListeSommets().size(); i++){
+			s += this.getListeSommets().get(i).getAbscisse() + "," + this.getListeSommets().get(i).getOrdonnee() + " ";
+		}
+		String fill = "none";
+		if (this.getCouleurInt() != null){
+			fill = this.getCouleurInt();
+		}
+		s += "' style='fill:" + fill + ";stroke:" + this.getCrayon().getCouleur() + ";stroke-width:" + this.getCrayon().getEpaisseur() + "' />";
+		return s;
+	}
+	
 	public String codeTexte(){
 		String s = "polygone " + this.getNom() + " de sommets ";
 		int i;
