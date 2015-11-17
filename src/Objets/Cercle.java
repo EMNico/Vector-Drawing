@@ -33,7 +33,7 @@ public class Cercle extends FormePleine{
 	}
 	
 	public Cercle clone(){
-		return new Cercle(this.getCentre().getAbscisse(), this.getCentre().getOrdonnee(), this.getRayon(), this.getCrayon());
+		return new Cercle(this.getCentre().clone(), this.getRayon(), this.getCrayon());
 	}
 	
 	public void translation(int abscisse, int ordonnee){
