@@ -28,12 +28,19 @@ public class Polygone extends FormePleine{
 	}
 	
 	public Polygone clone(){
-		// TODO
-		return null;
+		ArrayList<Point> listeSommets = null;
+		int i;
+		for (i = 0 ; i < this.getListeSommets().size() ; i++){
+			listeSommets.add(i, this.getListeSommets().get(i).clone());
+		}
+		return new Polygone(this.getCrayon(), listeSommets);
 	}
 	
 	public void translation(int abscisse, int ordonnee){
-		// TODO
+		int i;
+		for (i = 0 ; i < this.getListeSommets().size() ; i++){
+			this.getListeSommets().get(i).translation(abscisse, ordonnee);
+		}
 	}
 	
 	public String codeHTML(){

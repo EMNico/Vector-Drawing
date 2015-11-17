@@ -40,7 +40,7 @@ public class Segment extends ObjetGraphiqueSimple{
 	}
 	
 	public Segment clone(){
-		return new Segment(this.getExtremiteA().getAbscisse(), this.getExtremiteA().getOrdonnee(), this.getExtremiteB().getAbscisse(), this.getExtremiteB().getOrdonnee(), this.getCrayon());
+		return new Segment(this.getExtremiteA().clone(), this.getExtremiteB().clone(), this.getCrayon());
 	}
 	
 	public void translation(int abscisse, int ordonnee){
