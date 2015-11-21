@@ -28,7 +28,7 @@ public class Polygone extends FormePleine{
 	}
 	
 	public Polygone clone(){
-		ArrayList<Point> listeSommets = null;
+		ArrayList<Point> listeSommets = new ArrayList<Point>();
 		int i;
 		for (i = 0 ; i < this.getListeSommets().size() ; i++){
 			listeSommets.add(i, this.getListeSommets().get(i).clone());

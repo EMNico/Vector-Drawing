@@ -33,5 +33,13 @@ public class Point extends ObjetGraphiqueSimple{
 		this.setAbscisse(this.getAbscisse() + abscisse);
 		this.setOrdonnee(this.getOrdonnee() + ordonnee);
 	}
+
+	public String codeHTML() {
+		return "";
+	}
+
+	public String codeTexte() {
+		return "";
+	}
 	
 }
