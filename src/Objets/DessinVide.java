@@ -24,4 +24,14 @@ public final class DessinVide extends DessinAbstrait{
 		DessinVide.compteur += 1;
 		return new Dessin(elmt, DessinVide.getInstance(), nom);
 	}
+
+	@Override
+	public String codeHTML() {
+		return "";
+	}
+
+	@Override
+	public String codeTexte() {
+		return "";
+	}
 }
