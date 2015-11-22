@@ -11,10 +11,13 @@ abstract class DessinAbstrait implements ObjetGraphique{
 	public String getNom() {
 		return this.nom;
 	}
-
 	@Override
 	public void setNom(String nom) {
 		this.nom = nom;
+	}
+	
+	public Dessin addElmt(ObjetGraphiqueSimple elmt){
+		return null;
 	}
 	
 	public void displayGraphique(int x, int y){

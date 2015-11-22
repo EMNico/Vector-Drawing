@@ -10,4 +10,5 @@ abstract interface ObjetGraphique {
 	
 	public String codeHTML();
 	public String codeTexte();
+	public String codeSave();
 }

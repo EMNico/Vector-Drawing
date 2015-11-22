@@ -40,6 +40,7 @@ public class Cercle extends FormePleine{
 		this.getCentre().translation(abscisse, ordonnee);
 	}
 	
+	@Override
 	public String codeHTML(){
 		String s =  "<circle cx='" + this.getCentre().getAbscisse() + "'cy='" + this.getCentre().getOrdonnee() + "' r='" + this.getRayon() + "' stroke='" + this.getCrayon().getCouleur() + "' stroke-width='" + this.getCrayon().getEpaisseur() + "'";
 		String fill = "none";
@@ -50,7 +51,17 @@ public class Cercle extends FormePleine{
 		return s;
 	}
 	
+	@Override
 	public String codeTexte(){
 		return "cercle " + this.getNom() + " de centre " + this.getCentre().getNom() + " (" + this.getCentre().getAbscisse() + "," + this.getCentre().getOrdonnee() + ") et de rayon " + this.getRayon();
+	}
+
+	@Override
+	public String codeSave() {
+		String couleurInt = "";
+		if (this.getCouleurInt() != null){
+			couleurInt = this.getCouleurInt() + " ";
+		}
+		return this.getCrayon().getCouleur() + " " + this.getCrayon().getEpaisseur() + " " + "cercle " + this.getCentre().getAbscisse() + "," + this.getCentre().getOrdonnee() + " " + this.getRayon() + " " + couleurInt;
 	}
 }

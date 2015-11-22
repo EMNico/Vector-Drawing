@@ -42,4 +42,8 @@ public class Point extends ObjetGraphiqueSimple{
 		return "";
 	}
 	
+	public String codeSave() {
+		return this.getCrayon().getCouleur() + " " + this.getCrayon().getEpaisseur() + " " + "point " + this.abscisse + "," + this.ordonnee + " ";
+	}
+	
 }
