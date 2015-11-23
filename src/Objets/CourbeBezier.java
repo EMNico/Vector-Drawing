@@ -71,6 +71,7 @@ public class CourbeBezier extends ObjetGraphiqueSimple{
 		}
 	}
 	
+	@Override
 	public String codeHTML(){
 		String type = "Q";
 		String controle2 = "";
@@ -82,6 +83,7 @@ public class CourbeBezier extends ObjetGraphiqueSimple{
 		return s;
 	}
 	
+	@Override
 	public String codeTexte(){
 		String s = "";
 		s += "tracé manuel approximé par la courbe de Bézier " + this.getNom() + " allant du point " + this.getDepart().getNom()+ " (" + this.getDepart().getAbscisse() + "," + this.getDepart().getOrdonnee() + ") au point" + this.getArrivee().getNom()+ " (" + this.getArrivee().getAbscisse() + "," + this.getArrivee().getOrdonnee() + ")";
@@ -90,5 +92,16 @@ public class CourbeBezier extends ObjetGraphiqueSimple{
 			s += " et " + this.getControle2().getNom()+ " (" + this.getControle2().getAbscisse() + "," + this.getControle2().getOrdonnee() + ")";
 		}
 		return s;
+	}
+
+	@Override
+	public String codeSave() {
+		int ordre = 1;
+		String extraString = "";
+		if (this.getControle2() != null){
+			ordre = 2;
+			extraString = this.getControle2().getAbscisse() + "," + this.getControle2().getOrdonnee() + " ";
+		}
+		return this.getCrayon().getCouleur() + " " + this.getCrayon().getEpaisseur() + " " + "courbe " + ordre + " " + this.getDepart().getAbscisse() + "," + this.getDepart().getOrdonnee() + " " + this.getArrivee().getAbscisse() + "," + this.getArrivee().getOrdonnee() + " " + this.getControle1().getAbscisse() + "," + this.getControle1().getOrdonnee() + " " + extraString;
 	}
 }

@@ -37,11 +37,18 @@ public class Dessin extends DessinAbstrait{
 		}
 	}
 	
+	@Override
 	public String codeHTML(){
 		return this.getDessinSuivant().codeHTML() + this.getContenu().codeHTML();
 	}
 
+	@Override
 	public String codeTexte(){
 		return contenu.codeTexte() + ", " + dessinSuivant.codeTexte();
+	}
+
+	@Override
+	public String codeSave() {
+		return contenu.codeSave() + System.getProperty("line.separator" ) + dessinSuivant.codeSave();
 	}
 }

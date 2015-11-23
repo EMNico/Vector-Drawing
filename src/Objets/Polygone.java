@@ -43,6 +43,7 @@ public class Polygone extends FormePleine{
 		}
 	}
 	
+	@Override
 	public String codeHTML(){
 		String s =  "<polygon points='";
 		int i;
@@ -57,12 +58,28 @@ public class Polygone extends FormePleine{
 		return s;
 	}
 	
+	@Override
 	public String codeTexte(){
 		String s = "polygone " + this.getNom() + " de sommets ";
 		int i;
 		for (i = 0; i < this.getListeSommets().size(); i++){
 			s += this.getListeSommets().get(i).getNom() + " (" + this.getListeSommets().get(i).getAbscisse() + "," + this.getListeSommets().get(i).getOrdonnee() + "), "; 
 		}
+		return s;
+	}
+
+	@Override
+	public String codeSave() {
+		String s = this.getCrayon().getCouleur() + " " + this.getCrayon().getEpaisseur() + " " + "polygone " + this.getListeSommets().size() + " ";
+		int i;
+		for (i = 0; i < this.getListeSommets().size(); i++){
+			s += this.getListeSommets().get(i).getAbscisse() + "," + this.getListeSommets().get(i).getOrdonnee() + " "; 
+		}
+		String couleurInt = "";
+		if (this.getCouleurInt() != null){
+			couleurInt = this.getCouleurInt() + " ";
+		}
+		s = s + couleurInt;
 		return s;
 	}
 

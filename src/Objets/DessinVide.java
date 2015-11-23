@@ -34,4 +34,9 @@ public final class DessinVide extends DessinAbstrait{
 	public String codeTexte() {
 		return "";
 	}
+
+	@Override
+	public String codeSave() {
+		return "";
+	}
 }
