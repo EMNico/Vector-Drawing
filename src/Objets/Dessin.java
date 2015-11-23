@@ -49,6 +49,6 @@ public class Dessin extends DessinAbstrait{
 
 	@Override
 	public String codeSave() {
-		return contenu.codeSave() + System.getProperty("line.separator" ) + dessinSuivant.codeTexte();
+		return contenu.codeSave() + System.getProperty("line.separator" ) + dessinSuivant.codeSave();
 	}
 }

@@ -37,7 +37,7 @@ final class Methodes {
 	}
 	
 	@SuppressWarnings("null")
-	public static void recover(String fileName){
+	public static DessinAbstrait recover(String fileName){
 		String ligne = "";
 		String fichier = fileName;
 		BufferedReader ficTexte;
@@ -46,10 +46,10 @@ final class Methodes {
 			ficTexte = new BufferedReader(new FileReader(new File(fichier)));
 			do {
 				ligne = ficTexte.readLine();
-				if (ligne != null) {
+				if (!ligne.matches("")) {
 					dessin = dessin.addElmt(Methodes.recoverObject(ligne));
 				}
-			} while (ficTexte != null);
+			} while (ficTexte != null&&!ligne.matches(""));
 			ficTexte.close();
 			System.out.println("\n");
 		} catch (FileNotFoundException e) {
@@ -57,11 +57,12 @@ final class Methodes {
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		}
+		return dessin;
 	}
 	
 	public static ObjetGraphiqueSimple recoverObject(String ligne){
 		char[] liste = ligne.toCharArray();
-		char i = '0';
+		int i = 0;
 		String color = "";
 		ObjetGraphiqueSimple resultat;
 		
@@ -72,7 +73,7 @@ final class Methodes {
 		i++;
 		
 		String epaisseur = "";
-		while (i< liste.length){
+		while (i< liste.length&&liste[i] != ' '){
 			epaisseur += liste[i];
 			i++;
 		}
@@ -301,5 +302,10 @@ final class Methodes {
 		dessin = dessin.addElmt(c2);
 		dessin.displayTexte();
 		dessin.displayGraphique(1000, 1000);
+		save("fichier.txt",dessin);
+		DessinAbstrait d = recover("fichier.txt");
+		d.displayTexte();
+		d.displayGraphique(1000, 1000);
+		
 	}
 }
