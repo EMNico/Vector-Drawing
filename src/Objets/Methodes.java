@@ -290,16 +290,23 @@ final class Methodes {
 	}
 	
 	public static void main(String[] args) {
-		// EXEMPLE
+		
 		Crayon c = new Crayon("black", 2);
 		Cercle c1 = new Cercle(50, 50, 40, c);
 		c1.remplir("red");
 		c1.displayTexte();
-		//c1.displayGraphique(1000, 1000);
 		Segment c2 = new Segment(10, 20, 150, 300, c);
+		Point A = new Point(100,400,c);
+		Point B = new Point(520,400,c);
+		Point C = new Point(520,150,c);
+		ArrayList<Point> list = new ArrayList<Point>();
+		list.add(A);	list.add(B);	list.add(C);
+		Polygone triangle = new Polygone(c,list);
+		triangle.remplir("blue");
 		DessinVide.getInstance().displayTexte();
 		Dessin dessin = DessinVide.getInstance().addElmt(c1);
 		dessin = dessin.addElmt(c2);
+		dessin = dessin.addElmt(triangle);
 		dessin.displayTexte();
 		dessin.displayGraphique(1000, 1000);
 		save("fichier.txt",dessin);
